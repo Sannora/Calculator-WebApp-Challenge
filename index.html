@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <link rel="stylesheet" href="styleIndex.css" />
+  </head>
+  <body>
+    <section id="containerPrimary">
+      <!-- HEADER MARKUP -->
+      <section id="header" class="innerSection">
+        <h1 class="titleHeader">calc</h1>
+        <div id="themeDisplay">
+          <label for="theme">theme</label>
+          <div class="rangeSlider">
+            <ul class="rangeLabels">
+              <li class="rangeLabel">1</li>
+              <li class="rangeLabel">2</li>
+              <li class="rangeLabel">3</li>
+            </ul>
+            <input
+              type="range"
+              id="themeConfig"
+              name="theme"
+              list="themes"
+              step="50"
+              value="0"
+              onchange="updateRangeValue(this)"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- I/O MARKUP -->
+      <section id="input-output" class="innerSection">
+        <div id="input-outputArea">0</div>
+      </section>
+
+      <!-- KEYPAD MARKUP -->
+      <section id="keypad" class="innerSection">
+        <div id="inputButtons">
+          <button id="buttonSeven" class="buttonInput buttonNumeric">7</button>
+          <button id="buttonEight" class="buttonInput buttonNumeric">8</button>
+          <button id="buttonNine" class="buttonInput buttonNumeric">9</button>
+          <button id="buttonDelete" class="buttonInput">del</button>
+          <button id="buttonFour" class="buttonInput buttonNumeric">4</button>
+          <button id="buttonFive" class="buttonInput buttonNumeric">5</button>
+          <button id="buttonSix" class="buttonInput buttonNumeric">6</button>
+          <button id="buttonPlus" class="buttonInput buttonOperator">+</button>
+          <button id="buttonOne" class="buttonInput buttonNumeric">1</button>
+          <button id="buttonTwo" class="buttonInput buttonNumeric">2</button>
+          <button id="buttonThree" class="buttonInput buttonNumeric">3</button>
+          <button id="buttonMinus" class="buttonInput buttonOperator">-</button>
+          <button id="buttonPoint" class="buttonInput buttonOperator">.</button>
+          <button id="buttonZero" class="buttonInput buttonNumeric">0</button>
+          <button id="buttonDivision" class="buttonInput buttonOperator">/</button>
+          <button id="buttonMultiplication" class="buttonInput buttonOperator">x</button>
+        </div>
+        <div id="outputButtons">
+          <button id="buttonReset" class="buttonOutput">reset</button>
+          <button id="buttonEquals" class="buttonOutput">=</button>
+        </div>
+      </section>
+    </section>
+
+    <script src="scriptIndex.js"></script>
+  </body>
+</html>

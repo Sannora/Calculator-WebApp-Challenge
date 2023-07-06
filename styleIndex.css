@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+* {
+  font-family: "League Spartan", sans-serif;
+  margin: 0;
+}
+
+:root{
+
+  /* BODY COLORS */
+
+  --backgroundPrimary: hsl(222, 26%, 31%);
+  --themeConfig: hsl(223, 31%, 20%);
+  --themeConfigThumb: hsl(6, 63%, 50%);
+  --backgroundIO: hsl(223, 31%, 20%);
+  --backgroundKeypad: hsl(223, 31%, 20%);
+  --buttonIO: hsl(30, 25%, 89%);
+  --buttonDeleteReset: hsl(225, 21%, 49%);
+  --buttonEquals: hsl(6, 63%, 50%);
+
+  /* TYPOGRAPHY COLORS */
+
+  --header: hsl(0, 0%, 100%);
+  --io: hsl(0, 0%, 100%);
+  --keypadIO: hsl(221, 14%, 31%);
+  --keypadConfigButtons: hsl(0, 0%, 100%);
+  --equalsButton: hsl(0, 0%, 100%);
+  
+  /* SHADOW COLORS */
+
+  --shadowIO: hsl(28, 16%, 65%);
+  --shadowDelRes: hsl(224, 28%, 35%);
+  --shadowEq: hsl(6, 70%, 34%);
+
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--backgroundPrimary);
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerSection {
+  width: 100%;
+}
+
+/* HEADER */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rangeSlider{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#themeDisplay {
+  display: flex;
+  align-items: center;
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+}
+
+#themeConfig {
+  appearance: none;
+  background-color: var(--themeConfig);
+  transition: 0.5s;
+}
+
+#themeConfig::-webkit-slider-thumb {
+  appearance: none;
+  background-color: var(--themeConfigThumb);
+  transition: 0.5s;
+}
+
+/* I/O */
+
+#input-outputArea {
+  background-color: var(--backgroundIO);
+  text-align: end;
+  overflow: scroll;
+  transition: 0.5s;
+}
+
+#input-outputArea::-webkit-scrollbar{
+  display: none;
+}
+
+/* KEYPAD */
+
+#keypad {
+  background-color: var(--backgroundKeypad);
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+#inputButtons,
+#outputButtons {
+  width: 100%;
+  display: grid;
+}
+
+.buttonInput,
+.buttonOutput {
+  background-color: var(--buttonIO);
+  border: none;
+  transition: 0.5s;
+}
+
+#buttonDelete,
+#buttonReset {
+  background-color: var(--buttonDeleteReset);
+  transition: 0.5s;
+}
+
+#buttonEquals {
+  background-color: var(--buttonEquals);
+  transition: 0.5s;
+}
+
+/* Typography */
+
+/* HEADER TYPOGRAPHY */
+
+.titleHeader {
+  font-weight: 700;
+  color: var(--header);
+  transition: 0.5s;
+}
+
+#themeDisplay,
+.rangeLabels {
+  text-transform: uppercase;
+  color: var(--header);
+  transition: 0.5s;
+}
+
+/* I/O TYPOGRAPHY */
+
+#input-outputArea {
+  color: var(--io);
+  transition: 0.5s;
+}
+
+/* KEYPAD TYPOGRAPHY */
+
+.buttonInput,
+.buttonOutput {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--keypadIO);
+  transition: 0.5s;
+}
+
+#buttonDelete,
+#buttonReset {
+  color: var(--keypadConfigButtons);
+  transition: 0.5s;
+}
+
+#buttonEquals{
+  color: var(--equalsButton);
+  transition: 0.5s;
+}
+
+/* Desktop Responsive Query */
+@media screen and (min-width: 768px) {
+  #containerPrimary {
+    width: 30%;
+    max-width: 80%;
+  }
+
+  /* HEADER*/
+
+  #header {
+    margin-bottom: 1em;
+  }
+
+  .rangeSlider {
+    margin-left: 2em;
+    margin-bottom: 1em;
+  }
+
+  .rangeLabels {
+    padding: 0;
+  }
+
+  #themeConfig {
+    border-radius: 1em;
+    padding: 0.3em;
+    width: 4vw;
+  }
+
+  #themeConfig::-webkit-slider-thumb {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+  }
+
+  /* I/O */
+
+  #input-outputArea {
+    border-radius: 0.5em;
+    padding: 1em 0.5em;
+    margin-bottom: 1em;
+  }
+
+  /* KEYPAD */
+
+  #keypad {
+    border-radius: 0.5em;
+    padding: 1.5em;
+  }
+
+  .buttonInput,
+  .buttonOutput {
+    border-radius: 0.25em;
+    padding: 0.4em;
+    margin: 0.1em;
+    box-shadow: 0 0.1em var(--shadowIO);
+    transition: 0.5s;
+  }
+  
+  .buttonInput:active, .buttonOutput:active{
+    transform: translateY(0.1em);
+    box-shadow: 0 -0.05em var(--shadowIO);
+    transition: 0.5s;
+  }
+
+  #buttonDelete, #buttonReset{
+    box-shadow: 0 0.1em var(--shadowDelRes);
+    transition: 0.5s;
+  }
+
+  #buttonDelete:active, #buttonReset:active{
+    transform: translateY(0.1em);
+    box-shadow: 0 -0.05em var(--shadowDelRes);
+    transition: 0.5s;
+  }
+
+  #buttonEquals{
+    box-shadow: 0 0.1em var(--shadowEq);
+    transition: 0.5s;
+  }
+  
+  #buttonEquals:active{
+    transform: translateY(0.1em);
+    box-shadow: 0 -0.05em var(--shadowEq);
+    transition: 0.5s;
+  }
+
+  #inputButtons {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    margin-bottom: 2em;
+  }
+
+  #outputButtons {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+
+  /* Desktop Typography */
+
+  /* HEADER TYPOGRAPHY */
+
+  .titleHeader{
+    font-size: 1.5rem;
+  }
+
+  #themeDisplay {
+    font-size: 0.75rem;
+  }
+
+  /* I/O TYPOGRAPHY */
+
+  #input-outputArea {
+    font-size: 2rem;
+  }
+
+  /* KEYPAD TYPOGRAPHY */
+
+  .buttonInput,
+  .buttonOutput {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Responsive Query */
+@media screen and (max-width: 767px) {
+  #containerPrimary {
+    width: 90%;
+  }
+
+  /* HEADER*/
+
+  #header {
+    margin-bottom: 1em;
+  }
+
+  .rangeSlider {
+    margin-left: 0.75em;
+    margin-bottom: 1em;
+  }
+
+  .rangeLabels {
+    padding: 0;
+  }
+
+  #themeConfig {
+    border-radius: 10em;
+    padding: 0.5em;
+    width: 15vw;
+  }
+
+  #themeConfig::-webkit-slider-thumb {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+  }
+
+  /* I/O */
+
+  #input-outputArea {
+    border-radius: 0.5em;
+    padding: 1em 0.5em;
+    margin-bottom: 1em;
+  }
+
+  /* KEYPAD */
+
+  #keypad {
+    border-radius: 0.5em;
+    padding: 1em;
+  }
+
+  .buttonInput,
+  .buttonOutput {
+    border-radius: 0.25em;
+    padding: 0.4em;
+    margin: 0.2em;
+    box-shadow: 0 0.1em var(--shadowIO);
+    transition: 0.5s;
+  }
+  
+  .buttonInput:active, .buttonOutput:active{
+    transform: translateY(0.1em);
+    box-shadow: 0 -0.05em var(--shadowIO);
+    transition: 0.5s;
+  }
+
+  #buttonDelete, #buttonReset{
+    box-shadow: 0 0.1em var(--shadowDelRes);
+    transition: 0.5s;
+  }
+
+  #buttonDelete:active, #buttonReset:active{
+    transform: translateY(0.1em);
+    box-shadow: 0 -0.05em var(--shadowDelRes);
+    transition: 0.5s;
+  }
+
+  #buttonEquals{
+    box-shadow: 0 0.1em var(--shadowEq);
+    transition: 0.5s;
+  }
+  
+  #buttonEquals:active{
+    transform: translateY(0.1em);
+    box-shadow: 0 -0.05em var(--shadowEq);
+    transition: 0.5s;
+  }
+
+  #inputButtons {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  #outputButtons {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5em;
+  }
+
+  /* Desktop Typography */
+
+  /* HEADER TYPOGRAPHY */
+
+  .titleHeader{
+    font-size: 3rem;
+  }
+
+  #themeDisplay {
+    font-size: 1.5rem;
+  }
+
+  /* I/O TYPOGRAPHY */
+
+  #input-outputArea {
+    font-size: 2rem;
+  }
+
+  /* KEYPAD TYPOGRAPHY */
+
+  .buttonInput,
+  .buttonOutput {
+    font-size: 2rem;
+  }
+}
