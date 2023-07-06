@@ -1,4 +1,3 @@
-![image](https://github.com/Sannora/Calculator-WebApp-Challenge/assets/74245258/4fa17673-7b90-4c81-8b4a-b88cdcc988d7)# Calculator-WebApp-Challenge
 Web challenge that I've completed using HTML, CSS and JavaScript that is a fully functional four-operations calculator with three separate display themes.
 
   - A Comprehensive Summary of Work Steps -
