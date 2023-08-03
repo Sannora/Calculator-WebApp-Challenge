@@ -1,6 +1,6 @@
 Web challenge that I've completed using HTML, CSS and JavaScript that is a fully functional four-operations calculator with three separate display themes.
 
-  - A Comprehensive Summary of Work Steps -
+  ~ A Comprehensive Summary of Work Steps ~
 
 - I've used a simple range type input range slider to simulate the theme switch slider in the HTML markup. Rest is simple HTML markup; divided in 3 separate sections respectively as Header, I/O and Keypad and a super-section to contain them all.
 
